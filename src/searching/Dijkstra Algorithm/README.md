@@ -67,7 +67,7 @@ Min-heap prioritized by distance.
 ```cpp
 while (!pq.empty()) {
     auto [curDist, u] = pq.top(); pq.pop();
-    if (curDist > dist[u]) continue;  // Skip outdated entries
+    if (curDist > dist[u]) continue;  // Skip outdated entries. This line prevents reprocessing worse paths
     
     for (const Edge& e : nodes[u]->edges) {
         int v = e.to;
