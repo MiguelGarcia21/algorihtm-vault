@@ -1,4 +1,4 @@
-# 📚 Algorithm and Data Structures Repository
+# 📚 Algorithm Vault
 
 > ⚠️ **Work in Progress**  
 > This repository is currently under active development. Many folders and examples are yet to be added or finalized. Expect frequent updates and improvements.
