@@ -127,9 +127,121 @@ Path from 0 to 3: 0 -> 1 -> 2 -> 3
 
 ---
 
-## 🖼️ Matrix Visual walkthrough (In progress)
+## 🖼️ Matrix Visual walkthrough
+### 🔄 Initialization
+This is the Graph representation of the input:
+
+![sjjsj drawio](https://github.com/user-attachments/assets/e56ac42c-0e01-4001-8637-71b9d80c8a89)
+
+---
 
 
+
+#### 🧮 Distance Matrix (`dist`)
+
+|   | 0 | 1 | 2 | 3  |
+| - | - | - | - | -- |
+| 0 | 0 | 5 | ∞ | 10 |
+| 1 | ∞ | 0 | 3 | ∞  |
+| 2 | ∞ | ∞ | 0 | 1  |
+| 3 | 7 | ∞ | ∞ | 0  |
+
+#### 🧭 Path Matrix (`next`)
+
+|   | 0 | 1 | 2 | 3 |
+| - | - | - | - | - |
+| 0 | 0 | 1 | - | 3 |
+| 1 | - | 1 | 2 | - |
+| 2 | - | - | 2 | 3 |
+| 3 | 0 | - | - | 3 |
+
+---
+
+### 🧩 Iteration by Intermediate Node `k = 0`
+
+#### ✅ Updated Distance Matrix
+
+|   | 0 | 1  | 2 | 3  |
+| - | - | -- | - | -- |
+| 0 | 0 | 5  | ∞ | 10 |
+| 1 | ∞ | 0  | 3 | ∞  |
+| 2 | ∞ | ∞  | 0 | 1  |
+| 3 | 7 | 12 | ∞ | 0  |
+
+#### ✅ Updated Path Matrix
+
+|   | 0 | 1 | 2 | 3 |
+| - | - | - | - | - |
+| 0 | 0 | 1 | - | 3 |
+| 1 | - | 1 | 2 | - |
+| 2 | - | - | 2 | 3 |
+| 3 | 0 | 0 | - | 3 |
+
+---
+
+### 🧩 Iteration by Intermediate Node `k = 1`
+
+#### ✅ Updated Distance Matrix
+
+|   | 0 | 1  | 2  | 3  |
+| - | - | -- | -- | -- |
+| 0 | 0 | 5  | 8  | 10 |
+| 1 | ∞ | 0  | 3  | ∞  |
+| 2 | ∞ | ∞  | 0  | 1  |
+| 3 | 7 | 12 | 15 | 0  |
+
+#### ✅ Updated Path Matrix
+
+|   | 0 | 1 | 2 | 3 |
+| - | - | - | - | - |
+| 0 | 0 | 1 | 1 | 3 |
+| 1 | - | 1 | 2 | - |
+| 2 | - | - | 2 | 3 |
+| 3 | 0 | 0 | 0 | 3 |
+
+---
+
+### 🧩 Iteration by Intermediate Node `k = 2`
+
+#### ✅ Updated Distance Matrix
+
+|   | 0 | 1  | 2  | 3 |
+| - | - | -- | -- | - |
+| 0 | 0 | 5  | 8  | 9 |
+| 1 | ∞ | 0  | 3  | 4 |
+| 2 | ∞ | ∞  | 0  | 1 |
+| 3 | 7 | 12 | 15 | 0 |
+
+#### ✅ Updated Path Matrix
+
+|   | 0 | 1 | 2 | 3 |
+| - | - | - | - | - |
+| 0 | 0 | 1 | 1 | 1 |
+| 1 | - | 1 | 2 | 2 |
+| 2 | - | - | 2 | 3 |
+| 3 | 0 | 0 | 0 | 3 |
+
+---
+
+### 🧩 Iteration by Intermediate Node `k = 3`
+
+#### ✅ Final Distance Matrix
+
+|   | 0  | 1  | 2  | 3 |
+| - | -- | -- | -- | - |
+| 0 | 0  | 5  | 8  | 9 |
+| 1 | 11 | 0  | 3  | 4 |
+| 2 | 8  | 13 | 0  | 1 |
+| 3 | 7  | 12 | 15 | 0 |
+
+#### ✅ Final Path Matrix
+
+|   | 0 | 1 | 2 | 3 |
+| - | - | - | - | - |
+| 0 | 0 | 1 | 1 | 1 |
+| 1 | 2 | 1 | 2 | 2 |
+| 2 | 3 | 3 | 2 | 3 |
+| 3 | 0 | 0 | 0 | 3 |
 
 ---
 
