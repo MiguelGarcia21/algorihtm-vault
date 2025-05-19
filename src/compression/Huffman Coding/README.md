@@ -18,6 +18,23 @@ This is commonly used in file compression tools such as `ZIP`, and formats like 
 
 ---
 
+## ⏱️ Time and Space Complexity
+
+With `n` as the length of the input string and `d` as the number of **distinct characters**.
+
+| Operation              | Time Complexity       | Space Complexity       |
+|------------------------|------------------------|--------------------------|
+| Frequency Counting     | O(n)                   | O(d)                     |
+| Building Min-Heap      | O(d log d)             | O(d)                     |
+| Building Huffman Tree  | O(d log d)             | O(d)                     |
+| Code Generation        | O(d)                   | O(d)                     |
+| Encoding Input         | O(n)                   | O(n)                     |
+| Decoding Input         | O(n)                   | O(n)                     |
+
+**Total Time Complexity:** `O(n + d log d)`  
+**Total Space Complexity:** `O(n + d)`
+
+---
 ## 🛠️ Compilation
 
 You can compile with `g++`:
