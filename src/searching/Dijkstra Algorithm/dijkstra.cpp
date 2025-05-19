@@ -89,7 +89,7 @@ int main() {
     cout << "Enter number of nodes and edges: ";
     cin >> n >> m;
 
-    cout << "Enter edges (from to weight):\n";
+    cout << "Enter edges in this order (from to weight):\n";
     for (int i = 0; i < m; ++i) {
         int u, v, w;
         cin >> u >> v >> w;
